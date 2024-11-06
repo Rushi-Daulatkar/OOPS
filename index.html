@@ -9,72 +9,72 @@
 <body>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;inline int subtract(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;inline double divide(double a, double b) {&#10;    if (b != 0)&#10;        return a / b;&#10;    else {&#10;        cout &lt;&lt; &quot;Error: Division by zero is not allowed.&quot; &lt;&lt; endl;&#10;        return 0;&#10;    }&#10;}&#10;&#10;int main() {&#10;    int num1, num2;&#10;    cout &lt;&lt; &quot;Enter two integers for subtraction: &quot;;&#10;    cin &gt;&gt; num1 &gt;&gt; num2;&#10;    cout &lt;&lt; &quot;Result of subtraction: &quot; &lt;&lt; subtract(num1, num2) &lt;&lt; endl;&#10;&#10;    double num3, num4;&#10;    cout &lt;&lt; &quot;Enter two numbers for division: &quot;;&#10;    cin &gt;&gt; num3 &gt;&gt; num4;&#10;    double result = divide(num3, num4);&#10;    if (num4 != 0)&#10;        cout &lt;&lt; &quot;Result of division: &quot; &lt;&lt; result &lt;&lt; endl;&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Subtract & Divide</h3>
+    <h3>Inline Function Subtract & Divide</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
   
 <div class="card" data-code="#include &lt;iostream&gt;&#10;#define PI 3.14159&#10;using namespace std;&#10;&#10;inline double area(double radius) {&#10;    return PI * radius * radius;&#10;}&#10;&#10;inline double circumference(double radius) {&#10;    return 2 * PI * radius;&#10;}&#10;&#10;int main() {&#10;    double radius;&#10;    cout &lt;&lt; &quot;Enter the radius of the circle: &quot;;&#10;    cin &gt;&gt; radius;&#10;&#10;    cout &lt;&lt; &quot;Area of the circle: &quot; &lt;&lt; area(radius) &lt;&lt; endl;&#10;    cout &lt;&lt; &quot;Circumference of the circle: &quot; &lt;&lt; circumference(radius) &lt;&lt; endl;&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Circle Calculations</h3>
+    <h3> Inline Area and Circumference Calculations</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
   
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swap(int a, int b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;    cout &lt;&lt; &quot;Inside swap function - After swapping: a = &quot; &lt;&lt; a &lt;&lt; &quot;, b = &quot; &lt;&lt; b &lt;&lt; endl;&#10;}&#10;&#10;int main() {&#10;    int num1, num2;&#10;    cout &lt;&lt; &quot;Enter two numbers: &quot;;&#10;    cin &gt;&gt; num1 &gt;&gt; num2;&#10;&#10;    cout &lt;&lt; &quot;Before calling swap function - num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;&#10;    swap(num1, num2);&#10;    cout &lt;&lt; &quot;After calling swap function - num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Swap Function Example</h3>
+    <h3>Call by Value</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swap(int &amp;a, int &amp;b) {  // 'a' and 'b' are references to the original variables&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;    cout &lt;&lt; &quot;Inside swap function - After swapping: a = &quot; &lt;&lt; a &lt;&lt; &quot;, b = &quot; &lt;&lt; b &lt;&lt; endl;&#10;}&#10;&#10;int main() {&#10;    int num1, num2;&#10;    cout &lt;&lt; &quot;Enter two numbers: &quot;;&#10;    cin &gt;&gt; num1 &gt;&gt; num2;&#10;&#10;    cout &lt;&lt; &quot;Before calling swap function - num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;&#10;    swap(num1, num2);  // Pass variables by reference&#10;    cout &lt;&lt; &quot;After calling swap function - num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Reference Swap Function</h3>
+    <h3>Call by reference</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;class Student {&#10;    private:&#10;        string name;&#10;        int age;&#10;        float height;&#10;&#10;    public:&#10;        void getDetails() {&#10;            cout &lt;&lt; &quot;Enter student's name: &quot;;&#10;            getline(cin, name);  // To handle spaces in the name&#10;            cout &lt;&lt; &quot;Enter student's age: &quot;;&#10;            cin &gt;&gt; age;&#10;            cout &lt;&lt; &quot;Enter student's height (in cm): &quot;;&#10;            cin &gt;&gt; height;&#10;        }&#10;&#10;        void putDetails() {&#10;            cout &lt;&lt; &quot;&#92;nStudent Details:&#92;n&quot;;&#10;            cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; endl;&#10;            cout &lt;&lt; &quot;Age: &quot; &lt;&lt; age &lt;&lt; endl;&#10;            cout &lt;&lt; &quot;Height: &quot; &lt;&lt; height &lt;&lt; &quot; cm&quot; &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Student S;  // Creating an object of class Student&#10;    S.getDetails();  // Calling getDetails function to input details&#10;    S.putDetails();  // Calling putDetails function to output details&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Student Class Example</h3>
+    <h3>Class Student and Print Details</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;class Employee {&#10;    private:&#10;        string name;&#10;        int UID;&#10;        double salary;&#10;&#10;    public:&#10;        void getDetails() {&#10;            cout &lt;&lt; &quot;Enter employee's name: &quot;;&#10;            getline(cin, name);  // To handle spaces in the name&#10;            cout &lt;&lt; &quot;Enter employee's UID: &quot;;&#10;            cin &gt;&gt; UID;&#10;            cout &lt;&lt; &quot;Enter employee's salary: &quot;;&#10;            cin &gt;&gt; salary;&#10;        }&#10;&#10;        void putDetails() {&#10;            cout &lt;&lt; &quot;&#92;nEmployee Details:&#92;n&quot;;&#10;            cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; endl;&#10;            cout &lt;&lt; &quot;UID: &quot; &lt;&lt; UID &lt;&lt; endl;&#10;            cout &lt;&lt; &quot;Salary: $&quot; &lt;&lt; salary &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Employee E;  // Creating an object of class Employee&#10;    E.getDetails();  // Calling getDetails function to input details&#10;    E.putDetails();  // Calling putDetails function to output details&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Employee Class Example</h3>
+    <h3>Class Employee and Print Details</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
   
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void displayLocalVariable() {&#10;    int num = 10;  // Local variable, only accessible within this function&#10;    cout &lt;&lt; &quot;The value of the local variable num is: &quot; &lt;&lt; num &lt;&lt; endl;&#10;}&#10;&#10;int main() {&#10;    displayLocalVariable();  // Call function to display the local variable&#10;&#10;    // Uncommenting the following line will cause an error because 'num' is not accessible in main&#10;    // cout &lt;&lt; num &lt;&lt; endl;&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Local Variable Example</h3>
+    <h3>Local Variable Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int num = 20;  // Global variable, accessible throughout the program&#10;&#10;void displayGlobalVariable() {&#10;    cout &lt;&lt; &quot;The value of the global variable num is: &quot; &lt;&lt; num &lt;&lt; endl;&#10;}&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Accessing the global variable in main: &quot; &lt;&lt; num &lt;&lt; endl;&#10;    displayGlobalVariable();  // Call function to display the global variable&#10;    return 0;&#10;}">
-    <h3>C++ Global Variable Example</h3>
+    <h3>Global Variable Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int choice;&#10;    double num1, num2;&#10;&#10;    while (true) {&#10;        cout &lt;&lt; &quot;&#92;n****MENU****&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;1. ADDITION OF TWO NUMBERS&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;2. SUBTRACTION OF TWO NUMBERS&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;3. MULTIPLICATION OF TWO NUMBERS&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;4. DIVISION OF TWO NUMBERS&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;5. EXIT&quot; &lt;&lt; endl;&#10;        cout &lt;&lt; &quot;Enter your choice: &quot;&#10;        cin &gt;&gt; choice;&#10;&#10;        if (choice == 5) {&#10;            cout &lt;&lt; &quot;Exiting program...&quot; &lt;&lt; endl;&#10;            break;&#10;        }&#10;&#10;        cout &lt;&lt; &quot;Enter two numbers: &quot;&#10;        cin &gt;&gt; num1 &gt;&gt; num2;&#10;&#10;        switch (choice) {&#10;            case 1:&#10;                cout &lt;&lt; &quot;Result of addition: &quot; &lt;&lt; (num1 + num2) &lt;&lt; endl;&#10;                break;&#10;            case 2:&#10;                cout &lt;&lt; &quot;Result of subtraction: &quot; &lt;&lt; (num1 - num2) &lt;&lt; endl;&#10;                break;&#10;            case 3:&#10;                cout &lt;&lt; &quot;Result of multiplication: &quot; &lt;&lt; (num1 * num2) &lt;&lt; endl;&#10;                break;&#10;            case 4:&#10;                if (num2 != 0)&#10;                    cout &lt;&lt; &quot;Result of division: &quot; &lt;&lt; (num1 / num2) &lt;&lt; endl;&#10;                else&#10;                    cout &lt;&lt; &quot;Error: Division by zero is not allowed.&quot; &lt;&lt; endl;&#10;                break;&#10;            default:&#10;                cout &lt;&lt; &quot;Invalid choice! Please select a valid option.&quot; &lt;&lt; endl;&#10;                break;&#10;        }&#10;    }&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Menu-Driven Calculator Example</h3>
+    <h3>Menu Driven Program (Arithmetic Operations) Switch case Code</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;class Example {&#10;    private:&#10;        int value;&#10;&#10;    public:&#10;        // Default constructor&#10;        Example() {&#10;            value = 10;&#10;            cout &lt;&lt; &quot;Default constructor called. Value initialized to &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;&#10;        void display() {&#10;            cout &lt;&lt; &quot;Value: &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Example obj;  // Default constructor is called&#10;    obj.display();&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Default Constructor Example</h3>
+    <h3>Default Constructor Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;class Example {&#10;    private:&#10;        int value;&#10;&#10;    public:&#10;        // Parameterized constructor&#10;        Example(int v) {&#10;            value = v;&#10;            cout &lt;&lt; &quot;Parameterized constructor called. Value initialized to &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;&#10;        void display() {&#10;            cout &lt;&lt; &quot;Value: &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Example obj(100);  // Parameterized constructor is called with value 100&#10;    obj.display();&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Parameterized Constructor Example</h3>
+    <h3>Parameterized Constructor Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;class Example {&#10;    private:&#10;        int value;&#10;&#10;    public:&#10;        // Parameterized constructor&#10;        Example(int v) {&#10;            value = v;&#10;            cout &lt;&lt; &quot;Parameterized constructor called. Value initialized to &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;&#10;        // Copy constructor&#10;        Example(const Example &obj) {&#10;            value = obj.value;&#10;            cout &lt;&lt; &quot;Copy constructor called. Value copied as &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;&#10;        void display() {&#10;            cout &lt;&lt; &quot;Value: &quot; &lt;&lt; value &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Example obj1(200);  // Parameterized constructor is called with value 200&#10;    Example obj2 = obj1;  // Copy constructor is called&#10;&#10;    obj1.display();&#10;    obj2.display();&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Parameterized and Copy Constructor Example</h3>
+    <h3>Parameterized and Copy Constructor Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;class Box; // Forward declaration&#10;&#10;class Box {&#10;    private:&#10;        double length;&#10;        double width;&#10;        double height;&#10;&#10;    public:&#10;        // Constructor to initialize Box&#10;        Box(double l, double w, double h) {&#10;            length = l;&#10;            width = w;&#10;            height = h;&#10;        }&#10;&#10;        // Function to calculate volume&#10;        double volume() {&#10;            return length * width * height;&#10;        }&#10;&#10;        // Using 'this' keyword&#10;        void displayDimensions() {&#10;            cout &lt;&lt; &quot;Length: &quot; &lt;&lt; this-&gt;length &lt;&lt; &quot;, Width: &quot; &lt;&lt; this-&gt;width &lt;&lt; &quot;, Height: &quot; &lt;&lt; this-&gt;height &lt;&lt; endl;&#10;        }&#10;&#10;        // Declare class Friend&#10;        friend class BoxFriend;&#10;};&#10;&#10;// Friend class declaration&#10;class BoxFriend {&#10;    public:&#10;        // Access private members of Box class&#10;        void modifyDimensions(Box &b, double l, double w, double h) {&#10;            b.length = l;&#10;            b.width = w;&#10;            b.height = h;&#10;        }&#10;&#10;        // Function to display volume&#10;        void displayVolume(Box &b) {&#10;            cout &lt;&lt; &quot;Volume of the Box: &quot; &lt;&lt; b.volume() &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Box b1(10.5, 5.5, 2.0); // Create an object of Box class&#10;    BoxFriend bf;  // Create an object of BoxFriend class&#10;&#10;    b1.displayDimensions();  // Display original dimensions using 'this' keyword&#10;    bf.displayVolume(b1);    // Access private data through friend class&#10;&#10;    // Modify dimensions using friend class&#10;    bf.modifyDimensions(b1, 15.0, 10.0, 5.0);&#10;    b1.displayDimensions();  // Display updated dimensions&#10;    bf.displayVolume(b1);    // Display updated volume&#10;&#10;    return 0;&#10;}">
-  <h3>C++ Box Class with Friend Class Example</h3>
+  <h3>"this"Keyword with Friend Class Example</h3>
   <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
 <div class="card" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// Base class 1&#10;class Person {&#10;    public:&#10;        void displayPerson() {&#10;            cout &lt;&lt; &quot;I am a Person.&quot; &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;// Base class 2&#10;class Employee {&#10;    public:&#10;        void displayEmployee() {&#10;            cout &lt;&lt; &quot;I am an Employee.&quot; &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;// Derived class inheriting from both Person and Employee&#10;class Manager : public Person, public Employee {&#10;    public:&#10;        void displayManager() {&#10;            cout &lt;&lt; &quot;I am a Manager.&quot; &lt;&lt; endl;&#10;        }&#10;};&#10;&#10;int main() {&#10;    Manager mgr;&#10;&#10;    // Calling functions from both base classes and derived class&#10;    mgr.displayPerson();      // Function from Person class&#10;    mgr.displayEmployee();    // Function from Employee class&#10;    mgr.displayManager();     // Function from Manager class&#10;&#10;    return 0;&#10;}">
-    <h3>C++ Multiple Inheritance Example</h3>
+    <h3>Multiple Inheritance Example</h3>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
 
