@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.card {
+  background-color: #28282B;
+  color: #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.copy-btn {
+  background-color: #065535;
+  color: #f99500;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #133337;
+}
+
+.card h3 {
+  margin: 0 0 50px;
+}
